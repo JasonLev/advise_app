@@ -1,16 +1,19 @@
 <h1>Become an adviser...</h1><br>
-<h2>Provide us the required information (marked with *) or simply port your LinkedIn infomation</h2>
+<h2>Provide us the required information (marked with *). </h2> <!-- Eventually I'll include: "or simply port your LinkedIn infomation" -->
+
 
 <form action="/advisers" method="post">
 	<input type="hidden" name="adviser[user_id]" value="<%= @current_user.id %>" class="SOMETHING">
-	Which industry do you want to advise (this could be your current or a past industry)?
-	<input type="text" name"adviser[advice_industry]" placeholder="industry">
+	Which industry do you want to advise (this could be your current or a past industry you know well)?<br>
+	<input type="text" name"adviser[advice_industry]" placeholder="industry"><br>
+	How often can you meet with a protégé?
 	<select name="adviser[participation_level]" class="form-control">
 		<option value="monthly">Monthly</option>
 		<option value="quarterly">Quarterly</option>
 		<option value="bi-annual">Twice per year</option>
+		<option value="once">Only once</option>
 		<option value="tbd">I don't know right now</option>
-	</select>
-	<input type="submit"Your Participation Level" />
+	</select><br>
+	<input type="submit" class="btn btn-info btn-lg"/>
 </form><br>
-<%= link_to "cancel", root_path %>
+<a href="/"><button class="btn btn-danger pull-right">Cancel</button></a>

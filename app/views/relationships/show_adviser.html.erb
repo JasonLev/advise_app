@@ -1,3 +1,16 @@
-<h2>Your current industry: <%= @current_industry %></h2>
+<h1>Protégés in your industry:</h1>
+<div class="list-group">
+	<% if @common_proteges %>
+	<% @common_proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item"><%= protege.user.name %></a>
+	<% end %>
+	<% end %>
+</div>
 <br>
-<%= render "common_proteges" %>
+<h2>Didn't find the protégé you were looking for? Here's the full list of proteges:</h2>
+<div class="list-group">
+	<% @proteges = Protege.all %>
+	<% @proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item"><strong>Protégé:  </strong><%= protege.user.name %><br><strong>Industry:  </strong><%= protege.user.industry %></a><br>
+	<% end %>
+</div>

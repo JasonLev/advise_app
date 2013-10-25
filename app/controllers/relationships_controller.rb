@@ -1,8 +1,10 @@
 class RelationshipsController < ApplicationController
 
+
 	def show_protege
 		# @current_industry = current_user.industry
-		protege = Protege.find_by(params[:id])
+			# binding.pry
+		protege = Protege.find_by_user_id(current_user.id)
 		industry = protege.desired_industry1
 		@common_advisers = Adviser.find_by_advice_industry(industry)
 
@@ -32,9 +34,9 @@ class RelationshipsController < ApplicationController
 	end
 def show_adviser
 		# @current_industry = current_user.industry
-		adviser = Adviser.find_by(params[:id])
+		adviser = Adviser.find_by_user_id(current_user.id)
 		industry = adviser.advice_industry
-		@common_proteges = Adviser.find_by_desired_industry1(industry)
+		@common_proteges = Protege.find_by_desired_industry1(industry)
 
 
 		# if !Adviser.find_by_user_id(current_user.id)

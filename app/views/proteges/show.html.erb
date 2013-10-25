@@ -1,1 +1,10 @@
-this should display past/current adviser for this person
+<h1><%= @protege %> has the following info:</h1> 
+
+<h2><strong>Email: </strong><%= @protege_email %></h2><br>
+<h2><strong>Industry: </strong><%= @protege_industry %></h2><br>
+<h2><strong>Current job: </strong><%= @protege_current_position1 %></h2><br>
+<h2><strong>Most recent job: </strong><%= @protege_past_position1 %></h2><br>
+<h2><strong>Connect on linkedIn: </strong><%= @protege_linkedIn %></h2><br>
+
+<a href="/relationships/:id/adviser"><button class="btn btn-success btn-lg">Find an adviser</button></a>
+<a href="/proteges"><button class="btn btn-danger pull-right">See all protégés again</button></a>

@@ -7,10 +7,19 @@ class AdvisersController < ApplicationController
 		end
 	end
 
+	def show
+		@adviser = Adviser.find(params[:id]).user.name
+		@adviser_email = Adviser.find(params[:id]).user.email
+		@adviser_industry = Adviser.find(params[:id]).user.industry
+		@adviser_current_position1 = Adviser.find(params[:id]).user.current_position1
+		@adviser_past_position1 = Adviser.find(params[:id]).user.past_position1
+		@adviser_linkedIn = Adviser.find(params[:id]).user.linkedIn
+	end
+
 	def create
 		#pass through the user_id into the Adviser table
 		Adviser.create(params[:adviser])
-		redirect_to advisers_path 
+		redirect_to advisers_path(adviser.id) 
 	end
 
 end

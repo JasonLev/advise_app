@@ -1,9 +1,0 @@
-
-<h2>Your current industry: <%= @current_industry %></h2>
-<br>
-<%= @role %>
-<%if @role == "adviser" %>
-	<%= render "common_proteges" %>
-<% else %>
-	<%= render "common_advisers" %>
-<% end %>

@@ -10,9 +10,11 @@ AdviseApp::Application.routes.draw do
 
   resources :sessions, only: [:new, :create]
 
-  get '/relationships/:id/protege', to: 'relationships#show', as: 'find_protege'
+  resources :relationships
 
-  get '/relationships/:id/adviser', to: 'relationships#show', as: 'find_adviser'
+  get '/relationships/:id/protege', to: 'relationships#show_adviser', as: 'find_protege'
+
+  get '/relationships/:id/adviser', to: 'relationships#show_protege', as: 'find_adviser'
 
   get '/logout' => 'sessions#destroy'
 

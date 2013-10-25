@@ -14,6 +14,6 @@
     <%= f.text_field :desired_industry3, :class => "SOMETHING", placeholder: "industry" %> <br>
     Another Desired Job: <br>
     <%= f.text_field :desired_position3, :class => "SOMETHING", placeholder: "job" %> <br>
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-info btn-lg" %>
 <% end %><br>
-<%= link_to "cancel", root_path %>
+<a href="/"><button class="btn btn-danger pull-right">Cancel</button></a>
