@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023183634) do
+ActiveRecord::Schema.define(:version => 20131025023141) do
 
   create_table "advisers", :force => true do |t|
     t.datetime "created_at",            :null => false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20131023183634) do
     t.string   "participation_level"
     t.integer  "adviser_meeting_count"
     t.integer  "user_id"
+    t.string   "advice_industry"
   end
 
   add_index "advisers", ["user_id"], :name => "index_advisers_on_user_id"

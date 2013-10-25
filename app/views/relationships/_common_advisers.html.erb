@@ -1,4 +1,9 @@
-
+<h1>Advisers in your industry:</h1>
+<div class="list-group">
+	<% @common_advisers.each do |adviser| %>
+		<a href="/advisers/<%= adviser.id %>" class="list-group-item"><%= adviser.user.name %></a>
+	<% end %>
+</div>
 <br>
 <h2>Didn't find the adviser you were looking for? Here's the full list of advisers:</h2>
 <div class="list-group">

@@ -27,7 +27,8 @@ class ProtegesController < ApplicationController
 	def update
 		found_protege = Protege.find(params[:id])
 		found_protege.update_attributes(params[:protege])
-		redirect_to relationships_path
+		user = found_protege.user
+		redirect_to relationship_path found_protege
 	end
 
 	def destroy

@@ -3,6 +3,8 @@
 
 <form action="/advisers" method="post">
 	<input type="hidden" name="adviser[user_id]" value="<%= @current_user.id %>" class="SOMETHING">
+	Which industry do you want to advise (this could be your current or a past industry)?
+	<input type="text" name"adviser[advice_industry]" placeholder="industry">
 	<select name="adviser[participation_level]" class="form-control">
 		<option value="monthly">Monthly</option>
 		<option value="quarterly">Quarterly</option>
