@@ -1,0 +1,10 @@
+<h1><%= @adviser %> has the following info:</h1> 
+
+<h2><strong>Email: </strong><%= @adviser_email %></h2><br>
+<h2><strong>Industry: </strong><%= @adviser_industry %></h2><br>
+<h2><strong>Current job: </strong><%= @adviser_current_position1 %></h2><br>
+<h2><strong>Most recent job: </strong><%= @adviser_past_position1 %></h2><br>
+<h2><strong>Connect on linkedIn: </strong><%= @adviser_linkedIn %></h2><br>
+
+<a href="/relationships/:id/proteges"><button class="btn btn-success btn-lg">Find a protégé</button></a>
+<a href="/advisers"><button class="btn btn-danger pull-right">See all advisers again</button></a>
