@@ -1,0 +1,14 @@
+<h1> Protégés in your industry:</h1>
+<div class="list-group">
+	<% @proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item">something</a>
+	<% end %>
+</div>
+
+<br>
+<h2>Didn't find the protégé you were looking for? Here's the full list of proteges:</h2>
+<div class="list-group">
+	<% @proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item"><%= protege.user.name %><br><%= protege.desired_industry1 %></a><br>
+	<% end %>
+</div>

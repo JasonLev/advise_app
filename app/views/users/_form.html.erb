@@ -1,0 +1,26 @@
+<h2></h2>
+<%= form_for @user do |f| %>
+    *Industry: <br>
+    <%= f.text_field :industry, :class => "SOMETHING", placeholder: "industry" %> <br>
+    *Current Job: <br>
+    <%= f.text_field :current_position1, :class => "SOMETHING", placeholder: "job" %> <br>
+    Another Current Job: <br>
+    <%= f.text_field :current_position2, :class => "SOMETHING", placeholder: "job" %> <br>
+    Another Current Job: <br>
+    <%= f.text_field :current_position3, :class => "SOMETHING", placeholder: "job" %> <br>
+    *Past Job: <br>
+    <%= f.text_field :past_position1, :class => "SOMETHING", placeholder: "job" %> <br>
+    Past Job: <br>
+    <%= f.text_field :past_position2, :class => "SOMETHING", placeholder: "job" %> <br>
+    Past Job: <br>
+    <%= f.text_field :past_position3, :class => "SOMETHING", placeholder: "job" %> <br>
+    link to your resume: <br>
+    <%= f.text_field :resume, :class => "SOMETHING", placeholder: "industry" %> <br>
+    twitter: <br>
+    <%= f.text_field :twitter, :class => "SOMETHING", placeholder: "industry" %> <br>
+    git hub: <br>
+    <%= f.text_field :git_hub, :class => "SOMETHING", placeholder: "industry" %> <br>
+    Personal website: <br>
+    <%= f.text_field :website, :class => "SOMETHING", placeholder: "industry" %> <br>
+    <%= f.submit %>
+<% end %><br>

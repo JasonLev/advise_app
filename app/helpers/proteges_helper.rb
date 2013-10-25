@@ -1,0 +1,2 @@
+module ProtegesHelper
+end

@@ -1,0 +1,26 @@
+<h1>Welcome back, <%= @user.name %>!</h1>
+
+<p>Our system thinks you are <%= @role %>.</p> <!-- give an option to correct this, if wrong. -->
+<%if @role == "an adviser" %>
+  <a href="/proteges/new"><button class="btn btn-info">Become a protégé</button></a>
+  <a href="/relationships"><button class="btn btn-success">Find a protégé to advise</button></a>
+<% else %>
+	<a href="/advisers/new"><button class="btn btn-primary">Become an adviser</button></a>
+	<a href="/relationships"><button class="btn btn-success">Find an adviser</button></a>
+<% end %>
+<br>
+<h2>To keep you updated:</h2>
+<h3>Here's a list of the current protégés:</h3>
+<div class="list-group">
+	<% @proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item"><%= protege.user.name %></a>
+	<% end %>
+</div>
+
+<h3>Here's a list of the current advisers:</h3>
+<div class="list-group">
+	<% @advisers.each do |adviser| %>
+		<a href="/advisers/<%= adviser.id %>" class="list-group-item"><%= adviser.user.name %></a>
+	<% end %>
+</div>
+

@@ -1,0 +1,7 @@
+<h1>Great, you're a protege!  You've joined this list of current protégés: </h1>
+
+<div class="list-group">
+	<% @proteges.each do |protege| %>
+		<a href="/proteges/<%= protege.id %>" class="list-group-item"><%= protege.user.name %></a>
+	<% end %>
+</div>

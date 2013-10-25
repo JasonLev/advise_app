@@ -1,0 +1,19 @@
+<h3>To best utilize the AdviseApp, it will help to input your desired industry (or industries) and job(s).</h3>
+
+<%= form_for @protege do |f| %>
+    <%= f.hidden_field :user_id, value: "#{@current_user.id}", :class => "SOMETHING" %>
+    *Desired Industry: <br>
+    <%= f.text_field :desired_industry1, :class => "SOMETHING", placeholder: "industry" %> <br>
+    *Desired Job: <br>
+    <%= f.text_field :desired_position1, :class => "SOMETHING", placeholder: "job" %> <br>
+    Another Desired Industry: <br>
+    <%= f.text_field :desired_industry2, :class => "SOMETHING", placeholder: "industry" %> <br>
+    Another Desired Job: <br>
+    <%= f.text_field :desired_position2, :class => "SOMETHING", placeholder: "job" %> <br>
+    Another Desired Industry: <br>
+    <%= f.text_field :desired_industry3, :class => "SOMETHING", placeholder: "industry" %> <br>
+    Another Desired Job: <br>
+    <%= f.text_field :desired_position3, :class => "SOMETHING", placeholder: "job" %> <br>
+    <%= f.submit %>
+<% end %><br>
+<%= link_to "cancel", root_path %>

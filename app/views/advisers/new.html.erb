@@ -1,0 +1,14 @@
+<h1>Become an adviser...</h1><br>
+<h2>Provide us the required information (marked with *) or simply port your LinkedIn infomation</h2>
+
+<form action="/advisers" method="post">
+	<input type="hidden" name="adviser[user_id]" value="<%= @current_user.id %>" class="SOMETHING">
+	<select name="adviser[participation_level]" class="form-control">
+		<option value="monthly">Monthly</option>
+		<option value="quarterly">Quarterly</option>
+		<option value="bi-annual">Twice per year</option>
+		<option value="tbd">I don't know right now</option>
+	</select>
+	<input type="submit"Your Participation Level" />
+</form><br>
+<%= link_to "cancel", root_path %>

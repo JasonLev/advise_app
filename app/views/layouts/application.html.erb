@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AdviseApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Advise App</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <%if current_user %>
+          <li class="navbar-text">Signed in as <%= current_user.name %></li>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>
+          <li><a href="/sign_up">Sign up</a></li>
+          <li><a href="/login">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+    
+  	<%= flash[:errors] %>
+  	<%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

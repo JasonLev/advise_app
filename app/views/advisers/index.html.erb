@@ -1,0 +1,7 @@
+<h1>Great!  You're an adviser.  You've joined all these current advisers: </h1>
+
+<div class="list-group">
+	<% @advisers.each do |adviser| %>
+		<a href="/advisers/<%= adviser.id %>" class="list-group-item"><%= adviser.user.name %></a>
+	<% end %>
+</div>
