@@ -1,7 +1,7 @@
 <h1>Welcome back, <%= @user.name %>!</h1>
 
-<p>Our system thinks you are <%= @role %>.</p> <!-- give an option to correct this, if wrong. -->
-<%if @role == "an adviser" %>
+<p>Our system thinks you are: <%= @role %>.</p> <!-- give an option to correct this, if wrong. -->
+<%if @role == "adviser" %>
   <!-- Eventually, I'll let users have the option to become both a protege and adviser!  For now, I'll comment it out.
   <a href="/proteges/new"><button class="btn btn-info">Become a protégé</button></a> -->
 	<a href="/relationships/:id/protege"><button class="btn btn-success btn-lg">Find a protégé to advise</button></a>

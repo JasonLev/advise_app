@@ -33,7 +33,9 @@ class RelationshipsController < ApplicationController
 
 	end
 def show_adviser
+	
 		# @current_industry = current_user.industry
+		key_id = current_user.id 
 		adviser = Adviser.find_by_user_id(current_user.id)
 		industry = adviser.advice_industry
 		@common_proteges = Protege.find_by_desired_industry1(industry)

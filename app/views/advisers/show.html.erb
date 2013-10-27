@@ -5,6 +5,10 @@
 <h2><strong>Current job: </strong><%= @adviser_current_position1 %></h2><br>
 <h2><strong>Most recent job: </strong><%= @adviser_past_position1 %></h2><br>
 <h2><strong>Connect on linkedIn: </strong><%= @adviser_linkedIn %></h2><br>
-
-<a href="/relationships/:id/proteges"><button class="btn btn-success btn-lg">Find a protégé</button></a>
-<a href="/advisers"><button class="btn btn-danger pull-right">See all advisers again</button></a>
+<% if @role == "adviser" %>
+	<a href="/relationships/:id/proteges"><button class="btn btn-success btn-lg pull-left">Find a protégé</button></a>
+	<a href="/advisers"><button class="btn btn-danger pull-right">See all advisers again</button></a>
+<% else %>
+	<a href="/relationships/:id/adviser"><button class="btn btn-success btn-lg pull-left">Find an adviser</button></a>
+	<a href="/proteges"><button class="btn btn-danger pull-right">See all protégés again</button></a>
+<%end%>
