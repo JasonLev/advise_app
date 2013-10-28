@@ -1,5 +1,13 @@
 class ProtegesController < ApplicationController
 	def index
+		if !Protege.find_by_user_id(current_user.id)
+			@role = "adviser"
+			redirect_to users_path
+		elsif !Protege.find_by_user_id(current_user.id)
+			@role = "protégé"
+		else
+			redirect_to sign_in_path
+		end
 		@proteges = Protege.all
 		@proteges.each do |protege|
 			protege[:user] = protege.user

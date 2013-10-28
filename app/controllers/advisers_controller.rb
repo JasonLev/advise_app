@@ -2,6 +2,14 @@ class AdvisersController < ApplicationController
 
 
 	def index
+		if !Adviser.find_by_user_id(current_user.id)
+			@role = "protégé"
+			redirect_to users_path
+		elsif !Protege.find_by_user_id(current_user.id)
+			@role = "adviser"
+		else
+			redirect_to sign_in_path
+		end
 		@advisers = Adviser.all
 		@advisers.each do |adviser|
 			adviser[:user] = adviser.user

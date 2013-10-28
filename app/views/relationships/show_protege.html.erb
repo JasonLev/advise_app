@@ -1,9 +1,11 @@
 <h1>Advisers in your industry:</h1>
 <div class="list-group">
 	<% if @common_advisers %>
-	<% @common_advisers.each do |adviser| %>
-		<a href="/advisers/<%= adviser.id %>" class="list-group-item"><%= adviser.user.name %></a>
-	<% end %>
+		<% @common_advisers.each do |adviser| %>
+			<a href="/advisers/<%= adviser.id %>" class="list-group-item"><%= adviser.user.name %></a>
+		<% end %>
+	<% else %>
+		<h2>Sorry, there are no advisers that match your desired industry.</h2>
 	<% end %>
 </div>
 <br>
