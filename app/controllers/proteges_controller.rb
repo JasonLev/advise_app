@@ -3,15 +3,12 @@ class ProtegesController < ApplicationController
 		if !Protege.find_by_user_id(current_user.id)
 			@role = "adviser"
 			redirect_to users_path
-		elsif !Protege.find_by_user_id(current_user.id)
+		elsif !Adviser.find_by_user_id(current_user.id)
 			@role = "protégé"
 		else
-			redirect_to sign_in_path
+			redirect_to sign_up_path
 		end
 		@proteges = Protege.all
-		@proteges.each do |protege|
-			protege[:user] = protege.user
-		end	
 	end
 
 	def new
@@ -19,7 +16,8 @@ class ProtegesController < ApplicationController
 	end
 
 	def create
-		# make sure to pass through the user_id into protege along with all the params
+		# make sure to pass through the user_id into protege
+		# along with all the params
 		protege = Protege.create(params[:protege])
 		redirect_to protege_path(protege)
 	end
@@ -33,9 +31,9 @@ class ProtegesController < ApplicationController
 		@protege_linkedIn = Protege.find(params[:id]).user.linkedIn
 	end
 
-	# def edit
-	# 	@protege = Protege.find(params[:id])
-	# end
+	def edit
+		@protege = Protege.find(params[:id])
+	end
 
 	def update
 		found_protege = Protege.find(params[:id])

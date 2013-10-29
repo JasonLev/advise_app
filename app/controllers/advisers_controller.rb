@@ -8,7 +8,7 @@ class AdvisersController < ApplicationController
 		elsif !Protege.find_by_user_id(current_user.id)
 			@role = "adviser"
 		else
-			redirect_to sign_in_path
+			redirect_to sign_up_path
 		end
 		@advisers = Adviser.all
 		@advisers.each do |adviser|
@@ -25,10 +25,10 @@ class AdvisersController < ApplicationController
 		@adviser_linkedIn = Adviser.find(params[:id]).user.linkedIn
 		if !Adviser.find_by_user_id(current_user.id)
 			@role = "protégé"
-		elsif Protege.find_by_user_id(current_user.id).user_id == current_user.id
+		elsif !Protege.find_by_user_id(current_user.id)
 			@role = "adviser"
 		else
-			redirect_to sign_in_path
+			redirect_to sign_up_path
 		end
 	end
 

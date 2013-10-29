@@ -3,28 +3,17 @@ class UsersController < ApplicationController
 	skip_before_filter :authenticate, only: [:new, :create]
 
   def index
-  	# binding.pry
-  	# current_user
   	@user = current_user
+
+    if !Adviser.find_by_user_id(current_user.id)
+      @role = "protégé"
+    elsif !Protege.find_by_user_id(current_user.id)
+      @role = "adviser"
+    else
+      redirect_to sign_up_path
+    end
   	@proteges = Protege.all
-		@proteges.each do |protege|
-			protege[:user] = protege.user
-		end
-
 		@advisers = Adviser.all
-		@advisers.each do |adviser|
-			adviser[:user] = adviser.user
-		end
-
-  	if !Adviser.find_by_user_id(current_user.id)
-			@role = "protégé"
-		elsif Protege.find_by_user_id(current_user.id).user_id == current_user.id
-			@role = "adviser"
-		else
-			redirect_to sign_in_path
-		end
-  	
-  	
   	
   end
 

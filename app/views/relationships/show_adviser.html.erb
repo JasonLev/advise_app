@@ -9,7 +9,6 @@
 <br>
 <h2>Didn't find the protégé you were looking for? Here's the full list of proteges:</h2>
 <div class="list-group">
-	<% @proteges = Protege.all %>
 	<% @proteges.each do |protege| %>
 		<a href="/proteges/<%= protege.id %>" class="list-group-item"><strong>Protégé:  </strong><%= protege.user.name %><br><strong>Industry:  </strong><%= protege.user.industry %></a><br>
 	<% end %>

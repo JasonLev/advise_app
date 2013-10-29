@@ -2,62 +2,21 @@ class RelationshipsController < ApplicationController
 
 
 	def show_protege
-		# @current_industry = current_user.industry
-			# binding.pry
+	
 		protege = Protege.find_by_user_id(current_user.id)
 		industry = protege.desired_industry1
 		@common_advisers = Adviser.find_by_advice_industry(industry)
 
-
-
-
-
-		# if !Adviser.find_by_user_id(current_user.id)
-		# 	@role = "a protégé"
-		# elsif Protege.find_by_user_id(current_user.id).user_id == current_user.id
-		# 	@role = "an adviser"
-		# else
-		# 	redirect_to sign_in_path
-		# end
-		
-		# @proteges = Protege.all
-		# @proteges.each do |protege|
-		# 	protege[:user] = protege.user
-		# end
-
 		@advisers = Adviser.all
-		@advisers.each do |adviser|
-			adviser[:user] = adviser.user
-		end
-
 
 	end
-def show_adviser
+
+	def show_adviser
 	
-		# @current_industry = current_user.industry
-		key_id = current_user.id 
 		adviser = Adviser.find_by_user_id(current_user.id)
 		industry = adviser.advice_industry
-		@common_proteges = Protege.find_by_desired_industry1(industry)
-
-
-		# if !Adviser.find_by_user_id(current_user.id)
-		# 	@role = "a protégé"
-		# elsif Protege.find_by_user_id(current_user.id).user_id == current_user.id
-		# 	@role = "an adviser"
-		# else
-		# 	redirect_to sign_in_path
-		# end
-		
+		@common_proteges = Protege.where(desired_industry1: industry)
 		@proteges = Protege.all
-		@proteges.each do |protege|
-			protege[:user] = protege.user
-		end
-
-		# @advisers = Adviser.all
-		# @advisers.each do |adviser|
-		# 	adviser[:user] = adviser.user
-		# end
 
 	end
 
